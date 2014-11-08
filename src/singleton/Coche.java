@@ -2,11 +2,28 @@ package singleton;
 
 public class Coche {
 	
+	/* Fields */
+	private static Coche coche = null;
 	private String marca;
 	private String modelo;
 	private int cilindrada;
 	private int consumo;
 	
+	/* Private constructor */
+	private Coche(){}
+	
+	/* Retrieves instace */
+	public static synchronized Coche getInstance(){
+		if(coche==null){
+			System.out.println("Devolviendo un coche nuevo.");
+			coche = new Coche();
+		} else {
+			System.out.println("Devolviendo coche existente.");
+		}
+		return coche;
+	}
+	
+	/* Getters and setters */
 	public String getMarca() {
 		return marca;
 	}
