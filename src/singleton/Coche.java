@@ -12,7 +12,7 @@ public class Coche {
 	/* Private constructor */
 	private Coche(){}
 	
-	/* Retrieves instace */
+	/* Retrieves instance */
 	public static synchronized Coche getInstance(){
 		if(coche==null){
 			System.out.println("Devolviendo un coche nuevo.");
